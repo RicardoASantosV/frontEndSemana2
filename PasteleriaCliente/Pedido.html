@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <style>
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+
+}
+
+.container {  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 25px 15px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "Cabecera Cabecera Cabecera"
+    "imgIzq contForm imgDer"
+    "imgIzq contForm imgDer"; 
+  width: 99%;
+  height: 700px;
+}
+
+.Cabecera {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Logo Menu Menu"; 
+  grid-area: Cabecera;
+  width: 100%;
+  height: 100%;
+  background-color: #B01F60;
+}
+
+.Logo { 
+    grid-area: Logo; 
+    width: 100%;
+    height: 100%;
+    background-image: url("logoPasteleria.png");
+    background-size: 100% 100%;
+
+}
+.Menu { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+    ". . . ."
+    "Home Sabores Adornos Ordenar"
+    ". . . ."; 
+    grid-area: Menu;
+    width: 100%;
+    height: 100%; 
+}
+
+.Home {
+  grid-area: Home; 
+  width: 100%; 
+  height: 100%; 
+}
+.Sabores {
+  grid-area: Sabores; 
+  width: 100%; 
+  height: 100%; 
+}
+.Adornos {
+  grid-area: Adornos; 
+  width: 100%; 
+  height: 100%; 
+}
+.Ordenar {
+  grid-area: Ordenar; 
+  width: 100%; 
+  height: 100%; 
+}
+
+.button {
+            background-color: #7a093c;
+            padding:11px 32px; 
+            border-radius: 20px;
+            margin-left: 30%;
+            border: none;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 20px;
+    }
+
+    .imgIzq {
+  grid-area: imgIzq; 
+  width: 100%; 
+  height: 100%; 
+  background-image: url("pastel.png");
+  background-size: 100% 100%;
+}
+.imgDer {
+  grid-area: imgDer; 
+  width: 100%; 
+  height: 100%; 
+  background-image: url("decoFloral.jpg");
+  background-size: 100% 100%;
+}
+.contForm {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "Formulario Formulario Formulario"
+    "Formulario Formulario Formulario"
+    "Formulario Formulario Formulario"
+    "Formulario Formulario Formulario"
+    "Formulario Formulario Formulario"
+    "Formulario Formulario Formulario"
+    ". . acepBot"; 
+  grid-area: contForm; 
+  width: 100%; 
+  height: 100%; 
+}
+.Formulario {
+  grid-area: Formulario; 
+  width: 100%; 
+  height: 100%; 
+}
+.acepBot {
+  grid-area: acepBot; 
+  width: 100%; 
+  height: 100%;
+}
+
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color:#7a093c;
+}
+
+.inputText{
+    color: #7a093c;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="Cabecera">
+          <div class="Logo"></div>
+          <div class="Menu">
+            <div class="Home">
+                <a href="index.html" class="button">Home</a>
+            </div>
+            <div class="Sabores">
+                <a href="saboresPastel.html" class="button">Sabores</a>
+            </div>
+            <div class="Adornos">
+                <a href="adornoPasteles.html" class="button">Adornos</a>
+            </div>
+            <div class="Ordenar">
+                <a href="Pedido.html" class="button">Pedido</a>
+            </div>
+          </div>
+        </div>
+        <div class="imgIzq"></div>
+        <div class="imgDer"></div>
+        <div class="contForm">
+          <div class="Formulario">
+              <h1>Pedido</h1>
+              <p><input type="text" id="name" name="name" required minlength="10" maxlength="40" size="30" placeholder="Nombre Completo" class="inputText"></p>
+              <p><input type="text" id="email" name="email" required minlength="10" maxlength="30" size="30" placeholder="Correo electrónico"></p>
+              <p><input type="text" id="phone" name="phone" required minlength="10" maxlength="40" size="30" placeholder="Teléfono"></p>
+              <p><textarea name="description" placeholder="Descripción del pastel" cols="40" rows="5"></textarea></p>
+              <p>
+                  <p>Sabor del Pastel:</p>
+                  <input type="checkbox" id="Chocolate" name="sabores" value="Chocolate">
+                  <label for="Chocolate">Chocolate</label>
+                  <input type="checkbox" id="Vainilla" name="sabores" value="Vainilla">
+                  <label for="Vainilla">Vainilla</label>
+                  <input type="checkbox" id="Fresa" name="sabores" value="Fresa">
+                  <label for="Fresa">Fresa</label>
+              </p>
+              <p>
+                <p>Adorno del Pastel:</p>
+                <input type="checkbox" id="3D" name="adornos" value="3D">
+                <label for="3D">3D</label>
+                <input type="checkbox" id="Floral" name="adornos" value="Floral">
+                <label for="Floral">Floral</label>
+                <input type="checkbox" id="Geometrico" name="adornos" value="Geometrico">
+                <label for="Geometrico">Geometrico</label>
+            </p>
+          </div>
+          <div class="acepBot">
+            <a href="index.html" class="button">Aceptar</a>
+          </div>
+        </div>
+      </div>
+      
+    
+</body>
+</html>
